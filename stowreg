@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -d $1 ]
+then 
+    echo 'Retrieving registry at' $1
+    if [ -f $1'/stow.reg' ]
+    then
+        echo 'Registry found.'
+    else
+        echo 'Registry not found. Exiting...'
+    fi
+fi
