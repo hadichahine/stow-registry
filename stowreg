@@ -1,11 +1,17 @@
 #!/bin/bash
 
+add(){
+    echo $2 >> $1/stow.reg
+    echo 'Record' $2 'added to registry at' $1.
+}
+
 if [ -d $1 ]
 then 
     echo 'Retrieving registry at' $1
     if [ -f $1'/stow.reg' ]
     then
         echo 'Registry found.'
+        add $1 $2
     else
         echo 'Registry not found. Exiting...'
     fi
